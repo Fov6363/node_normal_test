@@ -1,0 +1,22 @@
+{
+  "name": "node_normal_test",
+  "version": "1.0.0",
+  "description": "日常测试demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fov6363/node_normal_test.git"
+  },
+  "keywords": [
+    "g"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fov6363/node_normal_test/issues"
+  },
+  "homepage": "https://github.com/fov6363/node_normal_test#readme"
+}
