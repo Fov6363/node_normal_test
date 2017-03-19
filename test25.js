@@ -1,6 +1,7 @@
 /**
  * Created by yuanyuan on 17/3/14.
  */
+const fs = require('fs');
 const PENDING = 0;
 const FULFILLED = 1;
 const REJECTED = 2;
@@ -30,7 +31,6 @@ function Promise(fn) {
         try{
             let then = getThen(result);
             if(then){
-                console.log(`result = ` + then);
                 doResolve(then.bind(result),resolve,reject);
                 return;
             }
@@ -60,7 +60,7 @@ function Promise(fn) {
         try{
             fn(function (value) {
                 if(done) return;
-                done = value;
+                done = true;
                 onFulfilled(value);
             },function (reason) {
                 if(done) return;
@@ -76,8 +76,6 @@ function Promise(fn) {
 
     function handle(handler) {
         if (state === PENDING){
-            console.log(`------------1-----------------`);
-            console.log(handler);
             handles.push(handler);
         }else {
             if(state === FULFILLED && typeof handler.onFulfilled === 'function'){
@@ -96,6 +94,7 @@ function Promise(fn) {
                 onRejected  : onRejected
             });
         },0)
+
     };
 
     this.then = function (onFulfilled,onRejected) {
@@ -114,7 +113,7 @@ function Promise(fn) {
             },function (error) {
                 if(typeof onRejected === 'function'){
                     try{
-                        return reject(onRejected(error));
+                        return resolve(onRejected(error));
                     }catch (e){
                         return reject(e);
                     }
