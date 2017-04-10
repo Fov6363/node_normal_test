@@ -4,7 +4,7 @@
   "description": "日常测试demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -25,10 +25,15 @@
     "chalk": "^1.1.3",
     "co": "^4.6.0",
     "crypto": "0.0.3",
+    "crypto-js": "^3.1.9-1",
+    "deasync": "^0.1.9",
     "debug": "^2.6.3",
+    "deep-eql": "^2.0.1",
     "lodash": "^4.17.4",
     "md5": "^2.2.1",
     "moment": "^2.17.1",
+    "normalutil": "^1.0.2",
+    "numeral": "^2.0.4",
     "qiniu": "^6.1.13",
     "request": "^2.81.0",
     "request-promise": "^4.1.1",
@@ -36,5 +41,8 @@
     "xlsx": "^0.9.3",
     "xml": "^1.0.1",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2"
   }
 }
