@@ -37,9 +37,16 @@ function parse_result_to_pretty(result) {
         let name = item['name'];
         let id = item['id'];
         let branch = item['branch'];
+        let branch_length = branch.length;
         let path = item['pwd'];
 
-        str += `│${chalk.green(item['name'])}${get_len(app_name_len - name.length)}│ ${item['id']}${get_len(id_len - id.length)}│ ${chalk.green(item['branch'])}${get_len(branch_len - branch.length)}│ ${item['pwd']}${get_len(path_len - path.length)}│\n`;
+        if(branch !== 'master'){
+            branch = chalk.red(branch);
+        }else{
+            branch = chalk.green(branch);
+        }
+
+        str += `│${chalk.green(item['name'])}${get_len(app_name_len - name.length)}│ ${item['id']}${get_len(id_len - id.length)}│ ${branch}${get_len(branch_len - branch_length)}│ ${item['pwd']}${get_len(path_len - path.length)}│\n`;
     });
 
     str = str.slice(0,-2);
