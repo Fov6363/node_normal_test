@@ -18,9 +18,9 @@ let arr = [1,2,3,4,5,6,7];
 
 
 async function def() {
-    arr.forEach(async item => {
+    await arr.forEach(async item => {
         debug(`def item------- ${item}`);
-        await abc(item);
+        debug(await abc(item));
     });
 
     debug(`def end-------`);
@@ -46,11 +46,11 @@ async function def2() {
     debug(`def2 end-------`);
 }
 
-// def();
+def();
 // def1();
 // def2();
 
-(async () => {
-    await def();
-    await def2();
-})();
+// (async () => {
+//     await def();
+//     await def2();
+// })();

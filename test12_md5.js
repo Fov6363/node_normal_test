@@ -21,8 +21,4 @@ const crypto = require('crypto');
 
 
 
-
-
-
-
-console.log(md5('op_menu_like_1066485695971402'));
+console.log(md5('op_question_answer_like_1209658028130375'));

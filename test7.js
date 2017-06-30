@@ -1,9 +1,9 @@
 const XLSX = require('xlsx');
 var data = [
-    [1,2,3],
-    [true, false, null, "sheetjs"],
-    ["foo","bar",'1992129012', "0.3"],
-    ["baz", null, "qux"]
+    // [1,2,3],
+    // [true, false, null, "sheetjs"],
+    // ["foo","bar",'1992129012', "0.3"],
+    // ["baz", null, "qux"]
 ];
 
 var ws_name = "年度报表";

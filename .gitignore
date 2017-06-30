@@ -2,3 +2,8 @@ node_modules/
 .idea/
 .idea/misc.xml
 .idea/workspace.xml
+logs
+.DS_Store
+*.log
+*.heapdump
+*.heapsnapshot
